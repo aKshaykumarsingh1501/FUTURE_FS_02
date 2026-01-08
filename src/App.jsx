@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
@@ -10,7 +12,7 @@ import Orders from "./pages/Orders";
 import Wishlist from "./pages/Wishlist";
 import Invoice from "./pages/Invoice";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Footer from "./components/Footer";
+
 const App = () => {
   return (
     <>
@@ -43,6 +45,7 @@ const App = () => {
           }
         />
       </Routes>
+
       <Footer />
     </>
   );
