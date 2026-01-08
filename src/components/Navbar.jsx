@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <h2>FutureStore</h2>
+      <h2>SafaMart</h2>
 
       <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
         <Link to="/">Home</Link>
