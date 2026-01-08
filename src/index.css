@@ -124,6 +124,9 @@ button {
   opacity: 0.6;
   border: 2px solid transparent;
 }
+.sort-select {
+  margin-bottom: 10px;
+}
 
 .thumb.active {
   opacity: 1;
@@ -386,7 +389,8 @@ button {
   display: flex;
   gap: 16px;
   align-items: center;
-  margin-bottom: 30px;
+  
+  margin-bottom: 48px;
 }
 
 .search-input {
