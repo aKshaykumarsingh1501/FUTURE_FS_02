@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import products from "../data/products";
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
@@ -11,15 +11,30 @@ const ProductDetails = () => {
   const { user } = useAuth();
 
   const product = products.find((p) => p.id === Number(id));
+
   const [activeImage, setActiveImage] = useState(
-    product.images?.[0] || product.image
+    product?.images?.[0] || product?.image
   );
+
+  // ✅ RECENTLY VIEWED LOGIC
+  useEffect(() => {
+    if (!product) return;
+
+    const stored =
+      JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+
+    const updated = [
+      product,
+      ...stored.filter((p) => p.id !== product.id),
+    ].slice(0, 6);
+
+    localStorage.setItem("recentlyViewed", JSON.stringify(updated));
+  }, [product]);
 
   if (!product) return <h2 className="center">Product not found</h2>;
 
   return (
     <div className="product-details">
-      {/* IMAGE SECTION */}
       <div className="image-section">
         <img src={activeImage} className="main-image" />
 
@@ -35,7 +50,6 @@ const ProductDetails = () => {
         </div>
       </div>
 
-      {/* INFO SECTION */}
       <div className="info">
         <h1>{product.name}</h1>
         <p className="price">₹{product.price}</p>
@@ -43,7 +57,6 @@ const ProductDetails = () => {
           Premium quality product. Designed for modern lifestyle use.
         </p>
 
-        {/* ✅ FIXED BUTTON */}
         <button
           onClick={() => {
             if (!user) {
@@ -52,7 +65,7 @@ const ProductDetails = () => {
             }
 
             addToCart(product);
-            navigate("/cart"); // Flipkart-style redirect
+            navigate("/cart");
           }}
         >
           Add to Cart
