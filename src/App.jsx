@@ -1,5 +1,7 @@
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
@@ -13,7 +15,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
 
       <Routes>
@@ -43,7 +45,10 @@ const App = () => {
           }
         />
       </Routes>
-    </>
+
+      {/* ✅ FOOTER ALWAYS AT BOTTOM */}
+      <Footer />
+    </BrowserRouter>
   );
 };
 
