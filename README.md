@@ -1,16 +1,90 @@
-# React + Vite
+#  FutureStore – Modern E-Commerce Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FutureStore is a modern, responsive e-commerce web application built using **React**.  
+It provides a clean shopping experience with product browsing, authentication, cart, wishlist, and checkout functionality.
 
-Currently, two official plugins are available:
+ **Live Demo:** https://future-fs-002.vercel.app  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+##  Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-  Product listing with modern UI
+-  Search, category filter & sorting
+-  Wishlist functionality
+-  Product details with image gallery
+-  Authentication (Login required for checkout)
+-  Cart & Checkout flow
+-  Orders page
+-  Fully responsive (Mobile + Tablet + Desktop)
+-  Dark-themed modern UI
+-  Fast deployment using Vercel
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Tech Stack
+
+- **Frontend:** React, React Router
+- **State Management:** Context API
+- **Styling:** Custom CSS (Responsive, Mobile-first)
+- **Build Tool:** Vite
+- **Deployment:** Vercel
+
+---
+
+## Project Structure
+
+
+FUTURE_FS_02/
+│
+├── public/
+│
+├── src/
+│   ├── assets/                 # Images & static assets
+│
+│   ├── components/             # Reusable UI components
+│   │   ├── CartItem.jsx
+│   │   ├── FilterBar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── OrderSummary.jsx
+│   │   ├── OrderTimeline.jsx
+│   │   ├── ProductCard.jsx
+│   │   ├── ProtectedRoute.jsx
+│   │   ├── Rating.jsx
+│   │   ├── RecentlyViewed.jsx
+│   │   └── Toast.jsx
+│
+│   ├── context/                # Global state (Context API)
+│   │   ├── AuthContext.jsx
+│   │   ├── CartContext.jsx
+│   │   ├── WishlistContext.jsx
+│   │   └── cartReducer.js
+│
+│   ├── data/                   # Static data
+│   │   └── products.js
+│
+│   ├── pages/                  # Application pages
+│   │   ├── Home.jsx
+│   │   ├── ProductDetails.jsx
+│   │   ├── Cart.jsx
+│   │   ├── Checkout.jsx
+│   │   ├── Success.jsx
+│   │   ├── Orders.jsx
+│   │   ├── Invoice.jsx
+│   │   ├── Login.jsx
+│   │   └── Wishlist.jsx
+│
+|   ├── utils/                  
+│   |   ├── recent.js
+|
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+│
+├── index.html
+├── package.json
+├── vite.config.js
+├── vercel.json
+└── README.md
